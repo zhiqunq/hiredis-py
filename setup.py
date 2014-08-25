@@ -40,6 +40,7 @@ lib = ("hiredis_for_hiredis_py", {
   "sources": ["vendor/hiredis/%s.c" % src for src in ("hiredis", "net", "sds")]})
 
 ext = Extension("hiredis.hiredis",
+  libraries=['ws2_32', 'wsock32'],
   sources=glob.glob("src/*.c"),
   include_dirs=["vendor"])
 
